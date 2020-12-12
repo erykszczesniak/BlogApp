@@ -1,6 +1,7 @@
 package com.erykszczesniak.demo.controller;
 
 
+import com.erykszczesniak.demo.dto.LoginRequest;
 import com.erykszczesniak.demo.service.AuthService;
 import com.erykszczesniak.demo.dto.RegisterRequest;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,5 +27,9 @@ public class AuthController {
     public ResponseEntity signup(@RequestBody RegisterRequest registerRequest) {
         authService.signup(registerRequest);
         return new ResponseEntity(HttpStatus.OK);
+    }
+    @PostMapping("/login")
+    public void login(@RequestBody LoginRequest loginRequest) {
+
     }
 }
